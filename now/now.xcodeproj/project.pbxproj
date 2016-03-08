@@ -12,6 +12,9 @@
 		8B1BEF1A1C87DED80083EF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF181C87DED80083EF9D /* Main.storyboard */; };
 		8B1BEF1C1C87DED80083EF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF1B1C87DED80083EF9D /* Assets.xcassets */; };
 		8B1BEF1F1C87DED80083EF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF1D1C87DED80083EF9D /* LaunchScreen.storyboard */; };
+		CF08071B1C8E7DE700DC2476 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */; };
+		CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */; };
+		CF08071F1C8E865F00DC2476 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		8B1BEF1B1C87DED80083EF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B1BEF1E1C87DED80083EF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1BEF201C87DED80083EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,24 @@
 			isa = PBXGroup;
 			children = (
 				8B1BEF141C87DED80083EF9D /* AppDelegate.swift */,
-				8B1BEF161C87DED80083EF9D /* ViewController.swift */,
 				8B1BEF181C87DED80083EF9D /* Main.storyboard */,
+				8B1BEF161C87DED80083EF9D /* ViewController.swift */,
+				CF0807201C8E867800DC2476 /* Set View Controllers */,
 				8B1BEF1B1C87DED80083EF9D /* Assets.xcassets */,
 				8B1BEF1D1C87DED80083EF9D /* LaunchScreen.storyboard */,
 				8B1BEF201C87DED80083EF9D /* Info.plist */,
 			);
 			path = now;
+			sourceTree = "<group>";
+		};
+		CF0807201C8E867800DC2476 /* Set View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */,
+				CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */,
+				CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */,
+			);
+			name = "Set View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1BEF171C87DED80083EF9D /* ViewController.swift in Sources */,
+				CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */,
+				CF08071F1C8E865F00DC2476 /* TaskTableViewCell.swift in Sources */,
+				CF08071B1C8E7DE700DC2476 /* AddTaskViewController.swift in Sources */,
 				8B1BEF151C87DED80083EF9D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +304,7 @@
 				8B1BEF251C87DED80083EF9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
