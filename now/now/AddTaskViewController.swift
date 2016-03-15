@@ -5,11 +5,6 @@
 //  Created by Jeremie Lim on 3/7/16.
 //  Copyright © 2016 CP3. All rights reserved.
 //
-
-// TODO
-// 1. Store value created in the main view list
-// 2. Update table view controller with data
-
 import UIKit
 
 class AddTaskViewController: UIViewController {
@@ -43,25 +38,21 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func didTapSave(sender: AnyObject) {
-        let curTaskCount = NSUserDefaults.standardUserDefaults().integerForKey("taskCount")
-        
-        let defaultsKey = "Tasks"
-        
+        // Grab data from modal
         let taskName = taskNameTextField.text
         let categoryName = taskCategorySegementedControl.titleForSegmentAtIndex(taskCategorySegementedControl.selectedSegmentIndex)
         let time = Int(taskTimeSegmentedControl.titleForSegmentAtIndex(taskTimeSegmentedControl.selectedSegmentIndex)!)
         
-        // Create a new Task object
-        var newTask =  Task(withTaskName: taskName!, categoryName: categoryName!, andTime: time!)
+        // Add new task to the globals tasks array
+        tasks.append(Task(withTaskName: taskName!, categoryName: categoryName!, andTime: time!))
         
-        tasks.append(newTask)
-        
+        // Convert new task to Binary format for NSUserDefaults
         let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
         
         // Add object to NS user defaults
-        NSUserDefaults.standardUserDefaults().setObject(data, forKey: defaultsKey)
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "Tasks")
         
-        NSUserDefaults.standardUserDefaults().setInteger(curTaskCount + 1, forKey: "taskCount")
+        // Save NSUserDefaults
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
