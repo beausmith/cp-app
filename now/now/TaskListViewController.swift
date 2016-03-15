@@ -20,15 +20,15 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Make table view work
         tableView.delegate = self
         tableView.dataSource = self
-        
-        NSUserDefaults.standardUserDefaults().setInteger(-1, forKey: "taskCount")
     }
     
     override func viewWillAppear(animated: Bool) {
         let curTaskCount = NSUserDefaults.standardUserDefaults().integerForKey("taskCount")
         
+        // Show empty state if there are no tasks
         if curTaskCount == -1 {
             tableView.alpha = 0
         } else {
@@ -36,11 +36,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             clearView.alpha = 0
         }
         
+        // Unpack the data into table
         let data = NSUserDefaults.standardUserDefaults().objectForKey("Tasks") as? NSData
         if data != nil {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
         
+        // Reload table
         tableView.reloadData()
     }
     
@@ -49,9 +51,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell")! as! TaskTableViewCell
         
+        // Store data in cell
         cell.taskLabel?.text = tasks[indexPath.row].taskName
         cell.taskCategory?.text = tasks[indexPath.row].categoryName
         cell.taskTime?.text = "\(tasks[indexPath.row].time):00"
