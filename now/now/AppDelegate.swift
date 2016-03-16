@@ -40,6 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+//    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+//        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: .Badge, categories: nil))
+//        
+//        let fireTime = NSTimer.fire(NS)
+//        
+//        let notification = UILocalNotification()
+//        notification.alertBody = "What are you doing today?"
+//        notification.alertAction = "Open"
+//        notification.fireDate = fireTime
+//        notification.soundName = UILocalNotificationDefaultSoundName
+//        notification.applicationIconBadgeNumber = 1
+//        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//        
+//        return true
+//    }
 
 
 }
