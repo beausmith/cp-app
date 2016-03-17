@@ -23,6 +23,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // Make table view work
         tableView.delegate = self
         tableView.dataSource = self
+
+        // Set table view row separator style
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     override func viewWillAppear(animated: Bool) {
