@@ -29,7 +29,7 @@ class TrackViewController: UIViewController {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
         
-        print("\(tasks[currentTask].taskName) \(tasks[currentTask].categoryName) \(tasks[currentTask].time):00")
+        //print("\(tasks[currentTask].taskName) \(tasks[currentTask].categoryName) \(tasks[currentTask].time):00")
         
         taskName.text = tasks[currentTask].taskName
         

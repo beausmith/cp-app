@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qQx-0t-iff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="qQx-0t-iff">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -13,14 +13,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rot-kO-ta5">
-                                <rect key="frame" x="272" y="32" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Add"/>
-                                <connections>
-                                    <segue destination="Kyw-tY-fn0" kind="modal" identifier="addTaskSegue" id="ejW-V4-M1u"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="76" sectionHeaderHeight="28" sectionFooterHeight="28" id="azH-25-U4c">
                                 <rect key="frame" x="0.0" y="84" width="320" height="509"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -30,7 +22,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MF3-nD-Ii2" id="hg0-lO-vxq">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="74"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="sag-qP-X9h">
@@ -68,7 +60,7 @@
                                             <outlet property="taskCategory" destination="772-n3-kDu" id="A2y-ez-kFm"/>
                                             <outlet property="taskLabel" destination="Zzj-hh-K2A" id="A6u-pZ-tm9"/>
                                             <outlet property="taskTime" destination="G0a-8B-hXb" id="nt4-sU-Q9l"/>
-                                            <segue destination="o6I-Cc-WoE" kind="push" id="d48-mz-SLw"/>
+                                            <segue destination="o6I-Cc-WoE" kind="push" identifier="startTaskSegue" id="d48-mz-SLw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -99,6 +91,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="settings icon"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rot-kO-ta5">
+                                <rect key="frame" x="272" y="32" width="32" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Add"/>
+                                <connections>
+                                    <segue destination="Kyw-tY-fn0" kind="modal" identifier="addTaskSegue" id="ejW-V4-M1u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93323183059692383" green="0.9333917498588562" blue="0.93322181701660156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -106,7 +106,6 @@
                     <connections>
                         <outlet property="clearView" destination="WYf-zp-XT0" id="ufn-ry-Wyw"/>
                         <outlet property="tableView" destination="azH-25-U4c" id="L2K-Rx-Ms1"/>
-                        <segue destination="o6I-Cc-WoE" kind="modal" identifier="startTaskSegue" id="iFt-KR-kMD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7a-Ha-sKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +397,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rpg-mj-5Tg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qQx-0t-iff" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qQx-0t-iff" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yhL-8p-7OL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -419,7 +418,6 @@
         <image name="settings icon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iFt-KR-kMD"/>
         <segue reference="zza-Mp-FRY"/>
     </inferredMetricsTieBreakers>
 </document>
