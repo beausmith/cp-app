@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7a-Ha-sKs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1228" y="790"/>
+            <point key="canvasLocation" x="-1784" y="882"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="XlO-Ev-0Zv">
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jZ-jf-WbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1760" y="1494"/>
+            <point key="canvasLocation" x="-1194" y="882"/>
         </scene>
         <!--Track View Controller-->
         <scene sceneID="dO3-F1-yG7">
@@ -273,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qc-D3-jI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="790"/>
+            <point key="canvasLocation" x="-2874" y="1568"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3g7-yi-JQf">
@@ -287,7 +287,7 @@
                         </userGuides>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reflect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fJ4-Dr-Z8B">
-                                <rect key="frame" x="102" y="44" width="117" height="21"/>
+                                <rect key="frame" x="20" y="25" width="117" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -299,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS6-kA-lWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-826" y="790"/>
+            <point key="canvasLocation" x="-1848" y="1950"/>
         </scene>
         <!--Distractions View Controller-->
         <scene sceneID="P3J-kX-Jrd">
@@ -392,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-978" y="1494"/>
+            <point key="canvasLocation" x="-2518" y="770"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rpg-mj-5Tg">
@@ -410,7 +410,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5t-5F-ONr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1760" y="790"/>
+            <point key="canvasLocation" x="-1860" y="770"/>
         </scene>
     </scenes>
     <resources>
