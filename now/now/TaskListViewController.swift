@@ -30,7 +30,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     override func viewWillAppear(animated: Bool) {
-        let curTaskCount = NSUserDefaults.standardUserDefaults().integerForKey("taskCount")
+        //let curTaskCount = NSUserDefaults.standardUserDefaults().integerForKey("taskCount")
 
         // Show empty state if there are no tasks
         checkIfEmptyState()
@@ -61,23 +61,22 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        print("start segue", segue.identifier)
         if (segue.identifier == "startTaskSegue") {
-            var destinationViewController = segue.destinationViewController as! TrackViewController
-            
+            let destinationViewController = segue.destinationViewController as! TrackViewController
+
             let cell = sender as! UITableViewCell
             let indexPath = tableView.indexPathForCell(cell)
-            let task = tasks[indexPath!.row]
-            
+            //let task = tasks[indexPath!.row]
+
             print(indexPath!.row)
             destinationViewController.currentTask = indexPath!.row
-            
+
             let localNotification = UILocalNotification()
             localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
             localNotification.alertBody = "Are you done with task?"
             localNotification.timeZone = NSTimeZone.defaultTimeZone()
             localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
-            
+
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
 
         }
