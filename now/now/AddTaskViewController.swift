@@ -44,7 +44,7 @@ class AddTaskViewController: UIViewController {
         let time = Int(taskTimeSegmentedControl.titleForSegmentAtIndex(taskTimeSegmentedControl.selectedSegmentIndex)!)
         
         // Add new task to the globals tasks array
-        tasks.insert(Task(withTaskName: taskName!, categoryName: categoryName!, andTime: time!), atIndex: 0)
+        tasks.insert(Task(withTaskName: taskName!, categoryName: categoryName!, time: time!, completed: Bool(false)), atIndex: 0)
         
         // Convert new task to Binary format for NSUserDefaults
         let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
