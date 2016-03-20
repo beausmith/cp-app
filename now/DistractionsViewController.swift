@@ -30,8 +30,11 @@ class DistractionsViewController: UIViewController {
     
     @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
         
+        dismissViewControllerAnimated(true, completion: nil)
+        
         if globalTaskTime == 0 {
-            dismissViewControllerAnimated(true, completion: nil)
+            
+            globalTaskTime = 15
         }
         
         

@@ -22,6 +22,8 @@ class TrackViewController: UIViewController {
     
     var count: Int!
     
+    var timer: NSTimer!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,16 +33,12 @@ class TrackViewController: UIViewController {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
         
-        globalTaskTime = tasks[currentTask].time
         
-        count = globalTaskTime
-        
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
         print(globalTaskTime)
         
         //print("\(tasks[currentTask].taskName) \(tasks[currentTask].categoryName) \(tasks[currentTask].time):00")
-        
+            
         taskName.text = tasks[currentTask].taskName
         
         taskTime.text = String(tasks[currentTask].time)
@@ -56,14 +54,28 @@ class TrackViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        globalTaskTime = tasks[currentTask].time
+        
+        count = globalTaskTime
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+    }
+    
     
     func update() {
         if(count > 0)
         {
             count = count - 1
             taskTime.text = String(count)
-        } else {
+            
+        } else if (count == 0) {
+    
             performSegueWithIdentifier("timerDoneSegue", sender: nil)
+            
+            timer.invalidate()
         }
         
     }
