@@ -61,7 +61,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        print("start segue", segue.identifier)
         if (segue.identifier == "startTaskSegue") {
             let destinationViewController = segue.destinationViewController as! TrackViewController
 
