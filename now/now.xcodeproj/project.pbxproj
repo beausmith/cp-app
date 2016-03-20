@@ -14,7 +14,7 @@
 		8B1BEF1F1C87DED80083EF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF1D1C87DED80083EF9D /* LaunchScreen.storyboard */; };
 		8BEC11071C9E084500E2E659 /* ReflectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC11061C9E084500E2E659 /* ReflectViewController.swift */; };
 		A30F088B1C9F512200E4A0C3 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F088A1C9F512200E4A0C3 /* Events.swift */; };
-		A30F6D1A1C90F58F00AA43B2 /* DistractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D191C90F58F00AA43B2 /* DistractionsViewController.swift */; };
+		A30F6D1A1C90F58F00AA43B2 /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */; };
 		A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */; };
 		CF08071B1C8E7DE700DC2476 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */; };
 		CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */; };
@@ -32,7 +32,7 @@
 		8B1BEF201C87DED80083EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BEC11061C9E084500E2E659 /* ReflectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectViewController.swift; sourceTree = "<group>"; };
 		A30F088A1C9F512200E4A0C3 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		A30F6D191C90F58F00AA43B2 /* DistractionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DistractionsViewController.swift; path = ../DistractionsViewController.swift; sourceTree = "<group>"; };
+		A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateTaskViewController.swift; path = ../UpdateTaskViewController.swift; sourceTree = "<group>"; };
 		A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		A30F6D181C90F3BC00AA43B2 /* Track View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A30F6D191C90F58F00AA43B2 /* DistractionsViewController.swift */,
+				A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */,
 				A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */,
 				A30F088A1C9F512200E4A0C3 /* Events.swift */,
 			);
@@ -175,7 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A30F6D1A1C90F58F00AA43B2 /* DistractionsViewController.swift in Sources */,
+				A30F6D1A1C90F58F00AA43B2 /* UpdateTaskViewController.swift in Sources */,
 				8B1BEF171C87DED80083EF9D /* ViewController.swift in Sources */,
 				A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */,
 				CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */,

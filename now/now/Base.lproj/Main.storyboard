@@ -313,10 +313,10 @@
             </objects>
             <point key="canvasLocation" x="-1848" y="1950"/>
         </scene>
-        <!--Distractions View Controller-->
+        <!--Update Task View Controller-->
         <scene sceneID="P3J-kX-Jrd">
             <objects>
-                <viewController id="9hq-WB-klU" customClass="DistractionsViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9hq-WB-klU" customClass="UpdateTaskViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jjC-I7-O7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -406,6 +406,6 @@
         <image name="settings icon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zza-Mp-FRY"/>
+        <segue reference="0GE-ac-PKn"/>
     </inferredMetricsTieBreakers>
 </document>

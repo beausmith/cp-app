@@ -1,5 +1,5 @@
 //
-//  DistractionsViewController.swift
+//  UpdateTaskViewController.swift
 //  now
 //
 //  Created by Jess Lam on 3/9/16.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DistractionsViewController: UIViewController {
+class UpdateTaskViewController: UIViewController {
 
+    var trackTask: Int!
 
     
     override func viewDidLoad() {
@@ -34,7 +35,8 @@ class DistractionsViewController: UIViewController {
         
         if globalTaskTime == 0 {
             
-            globalTaskTime = 15
+            globalTaskTime = tasks[trackTask].time
+            
         }
         
         
