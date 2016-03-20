@@ -14,7 +14,6 @@ class Events : NSObject {
     var categoryName : String
     var startTime : Int
     var endTime : Int
-    var totalTime: Int
     var completed : Bool
     
     init(
@@ -29,7 +28,6 @@ class Events : NSObject {
             categoryName = cn
             startTime = st
             endTime = et
-            totalTime = tt
             completed = c
 }
 
@@ -39,7 +37,6 @@ class Events : NSObject {
         categoryName = coder.decodeObjectForKey("categoryName") as! String
         startTime = coder.decodeObjectForKey("time") as! Int
         endTime = coder.decodeObjectForKey("time") as! Int
-        totalTime = coder.decodeObjectForKey("time") as! Int
         completed = coder.decodeObjectForKey("completed") as! Bool
 }
 
@@ -49,7 +46,6 @@ class Events : NSObject {
         coder.encodeObject(categoryName, forKey: "categoryName")
         coder.encodeObject(startTime, forKey: "time")
         coder.encodeObject(endTime, forKey: "time")
-        coder.encodeObject(totalTime, forKey: "time")
         coder.encodeObject(completed, forKey: "completed")
     }
 }
