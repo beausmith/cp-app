@@ -27,6 +27,11 @@ class DistractionsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
 
     }
+    
+    @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
+        
+    }
+    
 
     /*
     // MARK: - Navigation

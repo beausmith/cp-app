@@ -343,9 +343,11 @@
                                 <rect key="frame" x="73" y="122" width="174" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="In Progress"/>
                                 <connections>
                                     <action selector="didTapCancel:" destination="9hq-WB-klU" eventType="touchUpInside" id="tD6-za-CP4"/>
+                                    <outletCollection property="gestureRecognizers" destination="M2u-a4-8GK" appends="YES" id="nQf-n2-yYG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="szm-ci-I9a">
@@ -372,6 +374,11 @@
                     <navigationItem key="navigationItem" id="Vdw-EW-nVE"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="M2u-a4-8GK">
+                    <connections>
+                        <action selector="didTapInProgress:" destination="9hq-WB-klU" id="uzg-3L-7sQ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2518" y="770"/>
         </scene>
