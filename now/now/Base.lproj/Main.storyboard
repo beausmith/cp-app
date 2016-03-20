@@ -398,7 +398,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rpg-mj-5Tg">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qQx-0t-iff" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qQx-0t-iff" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yhL-8p-7OL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
