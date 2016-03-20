@@ -241,7 +241,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9hq-WB-klU" kind="modal" id="NzB-zh-Rso"/>
+                                    <segue destination="9hq-WB-klU" kind="modal" identifier="timerDoneSegue" id="NzB-zh-Rso"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ML2-4F-Pf7">
@@ -406,6 +406,6 @@
         <image name="settings icon" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q5S-GT-3RC"/>
+        <segue reference="zza-Mp-FRY"/>
     </inferredMetricsTieBreakers>
 </document>

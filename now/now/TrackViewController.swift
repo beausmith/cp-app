@@ -8,26 +8,36 @@
 
 import UIKit
 
+var globalTaskTime = 0
+
 class TrackViewController: UIViewController {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskTime: UILabel!
     @IBOutlet weak var taskCategory: UILabel!
-    
 
-    
     var taskNumber: Int!
     
     var currentTask: Int!
     
+    var count: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                            
+        
         // Unpack the data into table
         let data = NSUserDefaults.standardUserDefaults().objectForKey("Tasks") as? NSData
         if data != nil {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
+        
+        globalTaskTime = tasks[currentTask].time
+        
+        count = globalTaskTime
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        print(globalTaskTime)
         
         //print("\(tasks[currentTask].taskName) \(tasks[currentTask].categoryName) \(tasks[currentTask].time):00")
         
@@ -45,7 +55,18 @@ class TrackViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    func update() {
+        if(count > 0)
+        {
+            count = count - 1
+            taskTime.text = String(count)
+        } else {
+            performSegueWithIdentifier("timerDoneSegue", sender: nil)
+        }
+        
+    }
     
 
     /*
