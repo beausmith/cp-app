@@ -65,7 +65,7 @@ class TrackViewController: UIViewController {
     }
     
     
-    func update() {
+    func update() {        
         if(count > 0)
         {
             count = count - 1
@@ -88,6 +88,8 @@ class TrackViewController: UIViewController {
         
         
     }
+    
+    
     
 
     /*

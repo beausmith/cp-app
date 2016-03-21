@@ -33,6 +33,7 @@ class UpdateTaskViewController: UIViewController {
         
         dismissViewControllerAnimated(true, completion: nil)
         
+        // Reset timer to original task time
         if globalTaskTime == 0 {
             
             globalTaskTime = tasks[trackTask].time
