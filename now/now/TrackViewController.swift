@@ -41,7 +41,7 @@ class TrackViewController: UIViewController {
             
         taskName.text = tasks[currentTask].taskName
         
-        taskTime.text = String(tasks[currentTask].time)
+        taskTime.text = "\(tasks[currentTask].time):00"
         
         taskCategory.text = tasks[currentTask].categoryName
         
@@ -56,7 +56,7 @@ class TrackViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        globalTaskTime = tasks[currentTask].time
+        globalTaskTime = Int(tasks[currentTask].time)*60
         
         count = globalTaskTime
         
@@ -69,7 +69,23 @@ class TrackViewController: UIViewController {
         if(count > 0)
         {
             count = count - 1
-            taskTime.text = String(count)
+            
+            var elapsedTime: NSTimeInterval = Double(count)
+            
+            //calculate the minutes in elapsed time.
+            let minutes = UInt8(elapsedTime / 60.0)
+            elapsedTime -= (NSTimeInterval(minutes) * 60)
+            
+            //calculate the seconds in elapsed time.
+            let seconds = UInt8(elapsedTime)
+            elapsedTime -= NSTimeInterval(seconds)
+            
+            //add the leading zero for minutes, seconds and millseconds and store them as string constants
+            
+            let strMinutes = String(format: "%02d", minutes)
+            let strSeconds = String(format: "%02d", seconds)
+            
+            taskTime.text = "\(strMinutes):\(strSeconds)"
             
         } else if (count == 0) {
     
