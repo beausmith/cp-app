@@ -17,8 +17,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
     
-    let gradientLayer = CAGradientLayer()
-    
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
@@ -26,8 +24,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
 
         // Make table view work
         tableView.delegate = self
@@ -36,15 +32,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         // Set table view row separator style
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
-        // Set background color to a gradient blue
-        gradientLayer.frame = self.view.bounds
-        
-        let darkBlue = UIColor(red: 69/255, green: 151/255, blue: 225/225, alpha: 1.0).CGColor as CGColorRef
-        let lightBlue = UIColor(red: 80/255, green: 181/255, blue: 234/255, alpha: 1.0).CGColor as CGColorRef
-        gradientLayer.colors = [darkBlue, lightBlue]
-        gradientLayer.locations = [0.0, 1.0]
-
-        self.view.layer.addSublayer(gradientLayer)
     }
 
     override func viewWillAppear(animated: Bool) {
