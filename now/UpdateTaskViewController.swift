@@ -39,7 +39,6 @@ class UpdateTaskViewController: UIViewController {
             globalTaskTime = tasks[trackTask].time
             
         }
-
     }
     
 
