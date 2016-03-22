@@ -10,8 +10,6 @@
 
 import UIKit
 
-var tasks: [Task] = [Task]()
-
 class TaskListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
