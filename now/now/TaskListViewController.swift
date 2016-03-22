@@ -36,8 +36,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         let lightBlue = UIColor(red: 80/255, green: 181/255, blue: 234/255, alpha: 1.0).CGColor as CGColorRef
         gradientLayer.colors = [darkBlue, lightBlue]
         gradientLayer.locations = [0.0, 1.0]
-    
-        self.view.layer.addSublayer(gradientLayer)
+        
+        // self.view.layer.addSublayer(gradientLayer)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -67,7 +67,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Store data in cell
         cell.taskLabel?.text = tasks[indexPath.row].taskName
-        cell.taskCategory?.text = tasks[indexPath.row].categoryName
+        cell.taskCategory?.text = tasks[indexPath.row].categoryName.uppercaseString
         cell.taskTime?.text = "\(tasks[indexPath.row].time):00"
 
         return cell
