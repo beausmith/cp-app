@@ -1,5 +1,5 @@
 //
-//  DistractionsViewController.swift
+//  UpdateTaskViewController.swift
 //  now
 //
 //  Created by Jess Lam on 3/9/16.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class DistractionsViewController: UIViewController {
+class UpdateTaskViewController: UIViewController {
 
+    var trackTask: Int!
 
     
     override func viewDidLoad() {
@@ -27,6 +28,20 @@ class DistractionsViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
 
     }
+    
+    @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
+        
+        dismissViewControllerAnimated(true, completion: nil)
+        
+        // Reset timer to original task time
+        if globalTaskTime == 0 {
+            
+            globalTaskTime = tasks[trackTask].time
+            
+        }
+
+    }
+    
 
     /*
     // MARK: - Navigation
