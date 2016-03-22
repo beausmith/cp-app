@@ -98,6 +98,7 @@
 		8B1BEF131C87DED80083EF9D /* now */ = {
 			isa = PBXGroup;
 			children = (
+				8B7EE0351CA0E8FD0050B190 /* Reflect */,
 				A30F6D181C90F3BC00AA43B2 /* Track View Controllers */,
 				CF0807201C8E867800DC2476 /* Set View Controllers */,
 				8B1BEF141C87DED80083EF9D /* AppDelegate.swift */,
@@ -107,6 +108,14 @@
 				8B1BEF201C87DED80083EF9D /* Info.plist */,
 			);
 			path = now;
+			sourceTree = "<group>";
+		};
+		8B7EE0351CA0E8FD0050B190 /* Reflect */ = {
+			isa = PBXGroup;
+			children = (
+				8BEC11061C9E084500E2E659 /* ReflectViewController.swift */,
+			);
+			name = Reflect;
 			sourceTree = "<group>";
 		};
 		A30F6D181C90F3BC00AA43B2 /* Track View Controllers */ = {
@@ -126,7 +135,6 @@
 				CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */,
 				CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */,
 				CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */,
-				8BEC11061C9E084500E2E659 /* ReflectViewController.swift */,
 			);
 			name = "Set View Controllers";
 			sourceTree = "<group>";
