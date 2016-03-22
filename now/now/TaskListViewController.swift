@@ -18,9 +18,16 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var clearView: UIView!
     
     let gradientLayer = CAGradientLayer()
+    
+    // Set Nav Bar to use the light theme
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
 
         // Make table view work
         tableView.delegate = self
@@ -69,7 +76,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.taskLabel?.text = tasks[indexPath.row].taskName
         cell.taskCategory?.text = tasks[indexPath.row].categoryName.uppercaseString
         cell.taskTime?.text = "\(tasks[indexPath.row].time):00"
-
+        
+        // Set cell border radius
+        cell.cellBackgroundView?.layer.cornerRadius = 4
+        cell.cellBackgroundView?.layer.masksToBounds = true
+        
         return cell
     }
 
