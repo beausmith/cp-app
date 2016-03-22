@@ -21,7 +21,6 @@ class Events : NSObject {
         categoryName cn : String,
         startTime st : Int,
         endTime et : Int,
-        totalTime tt : Int,
         completed c: Bool
         ) {
             taskName = tn
@@ -35,8 +34,8 @@ class Events : NSObject {
     init(withCoder coder : NSCoder) {
         taskName = coder.decodeObjectForKey("taskName") as! String
         categoryName = coder.decodeObjectForKey("categoryName") as! String
-        startTime = coder.decodeObjectForKey("time") as! Int
-        endTime = coder.decodeObjectForKey("time") as! Int
+        startTime = coder.decodeObjectForKey("startTime") as! Int
+        endTime = coder.decodeObjectForKey("endTime") as! Int
         completed = coder.decodeObjectForKey("completed") as! Bool
 }
 
@@ -44,8 +43,8 @@ class Events : NSObject {
     func encodeWithCoder(coder : NSCoder) {
         coder.encodeObject(taskName, forKey: "taskName")
         coder.encodeObject(categoryName, forKey: "categoryName")
-        coder.encodeObject(startTime, forKey: "time")
-        coder.encodeObject(endTime, forKey: "time")
+        coder.encodeObject(startTime, forKey: "startTime")
+        coder.encodeObject(endTime, forKey: "endTime")
         coder.encodeObject(completed, forKey: "completed")
     }
 }

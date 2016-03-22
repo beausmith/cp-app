@@ -39,26 +39,6 @@ class UpdateTaskViewController: UIViewController {
             globalTaskTime = tasks[trackTask].time
             
         }
-        
-        
-        
-        
-//        // Grab data from modal
-//        let taskName = taskNameTextField.text
-//        let categoryName = taskCategorySegementedControl.titleForSegmentAtIndex(taskCategorySegementedControl.selectedSegmentIndex)
-//        let time = Int(taskTimeSegmentedControl.titleForSegmentAtIndex(taskTimeSegmentedControl.selectedSegmentIndex)!)
-//        
-//        // Add new task to the globals tasks array
-//        tasks.insert(Task(withTaskName: taskName!, categoryName: categoryName!, time: time!, completed: Bool(false)), atIndex: 0)
-//        
-//        // Convert new task to Binary format for NSUserDefaults
-//        let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
-//        
-//        // Add object to NS user defaults
-//        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "Tasks")
-//        
-//        // Save NSUserDefaults
-//        NSUserDefaults.standardUserDefaults().synchronize()
 
     }
     

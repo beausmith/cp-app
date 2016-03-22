@@ -32,12 +32,6 @@ class TrackViewController: UIViewController {
         if data != nil {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
-        
-        
-        
-        print(globalTaskTime)
-        
-        //print("\(tasks[currentTask].taskName) \(tasks[currentTask].categoryName) \(tasks[currentTask].time):00")
             
         taskName.text = tasks[currentTask].taskName
         
