@@ -104,4 +104,8 @@ class TrackViewController: UIViewController {
         navigationController?.popViewControllerAnimated(true)
     }
 
+    @IBAction func didTapStop(sender: AnyObject) {
+        // record Event
+        backHome()
+    }
 }
