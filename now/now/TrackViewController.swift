@@ -60,7 +60,7 @@ class TrackViewController: UIViewController {
         
         count = globalTaskTime
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
     }
     
