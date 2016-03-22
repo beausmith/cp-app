@@ -32,13 +32,15 @@ class TrackViewController: UIViewController {
         if data != nil {
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
-            
+
         taskName.text = tasks[currentTask].taskName
         
         taskTime.text = "\(tasks[currentTask].time):00"
         
         taskCategory.text = tasks[currentTask].categoryName
         
+        print(globalTaskTime)
+
         
         // Do any additional setup after loading the view.
     }
@@ -50,16 +52,18 @@ class TrackViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        globalTaskTime = Int(tasks[currentTask].time)*60
+            globalTaskTime = Int(tasks[currentTask].time)*60
         
-        count = globalTaskTime
+            count = globalTaskTime
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+
+            print(count)
         
     }
     
     
-    func update() {        
+    func update() {
         if(count > 0)
         {
             count = count - 1
@@ -82,23 +86,23 @@ class TrackViewController: UIViewController {
             taskTime.text = "\(strMinutes):\(strSeconds)"
             
         } else if (count == 0) {
-    
+
             performSegueWithIdentifier("timerDoneSegue", sender: nil)
             
             timer.invalidate()
         }
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-       
+
         let destinationViewController = segue.destinationViewController as! UpdateTaskViewController
         
         destinationViewController.trackTask = currentTask
         
+        timer.invalidate()
+
         
     }
-    
     
     
 
