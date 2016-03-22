@@ -24,10 +24,6 @@ class UpdateTaskViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapCancel(sender: UIButton) {
-        dismissViewControllerAnimated(true, completion: nil)
-
-    }
     
     @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
         

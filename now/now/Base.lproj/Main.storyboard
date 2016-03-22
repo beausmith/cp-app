@@ -337,9 +337,8 @@
                                     <navigationItem title="Update Task" id="jq6-MO-aaO">
                                         <barButtonItem key="leftBarButtonItem" id="AJb-YD-r0w">
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T2k-4G-Swt">
-                                                <rect key="frame" x="16" y="7" width="34" height="30"/>
+                                                <rect key="frame" x="16" y="7" width="30" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
                                                 <connections>
                                                     <action selector="didTapCancel:" destination="9hq-WB-klU" eventType="touchUpInside" id="nqh-Sc-h0E"/>
                                                 </connections>
