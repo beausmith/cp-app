@@ -16,6 +16,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
+    
+    // Set Nav Bar to use the light theme
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +31,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Set table view row separator style
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-
+        
     }
 
     override func viewWillAppear(animated: Bool) {
-        //let curTaskCount = NSUserDefaults.standardUserDefaults().integerForKey("taskCount")
-
-        // Show empty state if there are no tasks
-        checkIfEmptyState()
-
         // Unpack the data into table
         let data = NSUserDefaults.standardUserDefaults().objectForKey("Tasks") as? NSData
         if data != nil {
@@ -43,6 +43,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Reload table
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // Show empty state if there are no tasks
+        checkIfEmptyState()
+        
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,9 +61,13 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Store data in cell
         cell.taskLabel?.text = tasks[indexPath.row].taskName
-        cell.taskCategory?.text = tasks[indexPath.row].categoryName
+        cell.taskCategory?.text = tasks[indexPath.row].categoryName.uppercaseString
         cell.taskTime?.text = "\(tasks[indexPath.row].time):00"
-
+        
+        // Set cell border radius
+        cell.cellBackgroundView?.layer.cornerRadius = 4
+        cell.cellBackgroundView?.layer.masksToBounds = true
+        
         return cell
     }
 

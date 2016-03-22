@@ -13,10 +13,12 @@ class TaskTableViewCell: UITableViewCell {
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var taskCategory: UILabel!
     @IBOutlet weak var taskTime: UILabel!
+    @IBOutlet weak var cellBackgroundView: UIView!
  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
