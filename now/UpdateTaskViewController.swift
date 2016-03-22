@@ -11,8 +11,8 @@ import UIKit
 class UpdateTaskViewController: UIViewController {
 
     var trackTask: Int!
+    var trackViewController: TrackViewController!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,20 +23,37 @@ class UpdateTaskViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
     @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
-        
         dismissViewControllerAnimated(true, completion: nil)
-        
         // Reset timer to original task time
         if globalTaskTime == 0 {
-            
             globalTaskTime = tasks[trackTask].time
-            
         }
     }
-    
+
+    @IBAction func didTapSwitch(sender: AnyObject) {
+        // log event for current task
+        // Dismiss modal
+        dismissViewControllerAnimated(true, completion: nil)
+        // Go back to home
+        trackViewController.backHome()
+    }
+
+    @IBAction func didTapCompleted(sender: AnyObject) {
+        // log event for current task
+        // is there a next task?
+            // Start the next task
+            // trackViewController.startNextTask()
+            // Dismiss modal
+            dismissViewControllerAnimated(true, completion: nil)
+        // else
+            // Dismiss modal
+            // dismissViewControllerAnimated(true, completion: nil)
+            // Go back to home
+            // trackViewController.backHome()
+    }
 
     /*
     // MARK: - Navigation

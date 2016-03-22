@@ -364,7 +364,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Switch"/>
                                 <connections>
-                                    <segue destination="qQx-0t-iff" kind="modal" id="0GE-ac-PKn"/>
+                                    <action selector="didTapSwitch:" destination="9hq-WB-klU" eventType="touchUpInside" id="5xs-b0-UR9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bUc-Yw-81s">
@@ -373,7 +373,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Completed"/>
                                 <connections>
-                                    <segue destination="qQx-0t-iff" kind="modal" id="q5S-GT-3RC"/>
+                                    <action selector="didTapCompleted:" destination="9hq-WB-klU" eventType="touchUpInside" id="tKk-qn-AZp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -406,7 +406,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5t-5F-ONr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1860" y="770"/>
+            <point key="canvasLocation" x="-2024" y="777"/>
         </scene>
     </scenes>
     <resources>
@@ -414,7 +414,4 @@
         <image name="LaunchScreen" width="320" height="568"/>
         <image name="settings icon" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="q5S-GT-3RC"/>
-    </inferredMetricsTieBreakers>
 </document>
