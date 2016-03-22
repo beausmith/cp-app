@@ -7,13 +7,61 @@
 //
 
 import UIKit
+import Charts
 
-class ReflectViewController: UIViewController {
+class ReflectViewController: UIViewController, ChartViewDelegate {
+
+    @IBOutlet weak var pieChartView: PieChartView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        pieChartView.noDataText = "You need to provide data for the chart."
+        pieChartView.noDataTextDescription = "GIVE REASON"
+        pieChartView.descriptionText = ""
+        pieChartView.drawHoleEnabled = true
+        pieChartView.centerText = "foobar"
+        //pieChartView.usePercentValuesEnabled = true
+        pieChartView.legend.enabled = false
+
+        var taskNames = [String]()
+        var taskTimes = [Double]()
+
+        if tasks.count > 0 {
+            for task in tasks {
+                taskNames.append(task.taskName)
+                taskTimes.append(Double(task.time))
+            }
+        }
+
+        setChart(taskNames, values: taskTimes)
+
+    }
+
+    func setChart(dataPoints: [String], values: [Double]) {
+
+        var dataEntries: [ChartDataEntry] = []
+        var colors: [UIColor] = []
+
+        for i in 0..<dataPoints.count {
+
+            // map times to tasks
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+
+            // adjust hue based upon number of tasks
+            let hue = CGFloat(i+1)/CGFloat(dataPoints.count)
+            let color = UIColor(hue: hue, saturation: 0.6, brightness: 0.75, alpha: 1.0)
+
+            colors.append(color)
+        }
+
+        // create dataset to
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Completed Tasks")
+        pieChartDataSet.colors = colors
+        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
+
+        pieChartView.data = pieChartData
     }
 
     override func didReceiveMemoryWarning() {

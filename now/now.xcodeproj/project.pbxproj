@@ -12,7 +12,7 @@
 		8B1BEF1A1C87DED80083EF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF181C87DED80083EF9D /* Main.storyboard */; };
 		8B1BEF1C1C87DED80083EF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF1B1C87DED80083EF9D /* Assets.xcassets */; };
 		8B1BEF1F1C87DED80083EF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B1BEF1D1C87DED80083EF9D /* LaunchScreen.storyboard */; };
-		8B7EE0311C9F36BC0050B190 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7EE0301C9F36BC0050B190 /* Charts.framework */; };
+		8B7EE0331C9F39540050B190 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7EE0321C9F39540050B190 /* Charts.framework */; };
 		8BEC11071C9E084500E2E659 /* ReflectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC11061C9E084500E2E659 /* ReflectViewController.swift */; };
 		A30F6D1A1C90F58F00AA43B2 /* DistractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D191C90F58F00AA43B2 /* DistractionsViewController.swift */; };
 		A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */; };
@@ -34,6 +34,7 @@
 		8B1BEF1E1C87DED80083EF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B1BEF201C87DED80083EF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B7EE0301C9F36BC0050B190 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
+		8B7EE0321C9F39540050B190 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "Pods/../build/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		8BEC11061C9E084500E2E659 /* ReflectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectViewController.swift; sourceTree = "<group>"; };
 		A30F6D191C90F58F00AA43B2 /* DistractionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DistractionsViewController.swift; path = ../DistractionsViewController.swift; sourceTree = "<group>"; };
 		A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B7EE0311C9F36BC0050B190 /* Charts.framework in Frameworks */,
+				8B7EE0331C9F39540050B190 /* Charts.framework in Frameworks */,
 				C6098D2789E806D0D0DC5D4A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +61,7 @@
 		425E3542FB56842BD517682A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8B7EE0321C9F39540050B190 /* Charts.framework */,
 				8B7EE0301C9F36BC0050B190 /* Charts.framework */,
 				D3D4703310A1B6E3CF2C2207 /* Pods.framework */,
 			);
@@ -371,10 +373,7 @@
 			baseConfigurationReference = 7E3E0936670BCF27187C308B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "";
 				INFOPLIST_FILE = now/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cp3.now;
