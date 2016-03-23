@@ -23,6 +23,10 @@ class TrackViewController: UIViewController {
     var count: Int!
 
     var timer: NSTimer!
+    
+    var taskListViewController: TaskListViewController!
+    
+    var trackTask: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,18 +91,19 @@ class TrackViewController: UIViewController {
 
         } else if (count == 0) {
 
-            performSegueWithIdentifier("timerDoneSegue", sender: nil)
+//            performSegueWithIdentifier("timerDoneSegue", sender: nil)
 
             timer.invalidate()
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController as! UpdateTaskViewController
-        destinationViewController.trackTask = currentTask
-        timer.invalidate()
-        destinationViewController.trackViewController = self
-    }
+    // Commented this out since we don't segue to UpdateTask vc anymore.
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        let destinationViewController = segue.destinationViewController as! UpdateTaskViewController
+//        destinationViewController.trackTask = currentTask
+//        timer.invalidate()
+//        destinationViewController.trackViewController = self
+//    }
 
     func currentTaskCompleted() {
         // log event for current task
@@ -135,4 +140,34 @@ class TrackViewController: UIViewController {
         // record Event
         backHome()
     }
+    
+    @IBAction func didTapSwitch(sender: UIButton) {
+        // log event for current task
+        // Dismiss modal
+//        dismissViewControllerAnimated(true, completion: nil)
+        
+        performSegueWithIdentifier("tapSwitchSegue", sender: nil)
+        timer.invalidate()
+        // Go back to home
+//        taskListViewController.backHome()
+    }
+    
+    @IBAction func didTapDone(sender: UIButton) {
+          // how to set task to completed
+//        taskListViewController.currentTaskCompleted()
+        performSegueWithIdentifier("tapDoneSegue", sender: nil)
+        timer.invalidate()
+        
+        // Need to remove current task from task list vc
+        
+    }
+    
+    @IBAction func didTapInProgress(sender: UIButton) {
+        //Reset timer to original task time
+                if globalTaskTime == 0 {
+                    globalTaskTime = tasks[trackTask].time
+                }
+    }
+    
+    
 }

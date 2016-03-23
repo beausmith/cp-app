@@ -311,28 +311,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Switch" id="RlE-2G-90C">
-                                <rect key="frame" x="61" y="484" width="50" height="50"/>
+                                <rect key="frame" x="61" y="455" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pge-Vd-cBd">
-                                <rect key="frame" x="84" y="333" width="153" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Track">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="9hq-WB-klU" kind="modal" identifier="timerDoneSegue" id="NzB-zh-Rso"/>
-                                </connections>
-                            </button>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Continue - play" id="mpp-et-LLy">
-                                <rect key="frame" x="127" y="476" width="66" height="66"/>
+                                <rect key="frame" x="127" y="447" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Done" id="IEA-K2-Aur">
-                                <rect key="frame" x="209" y="484" width="50" height="50"/>
+                                <rect key="frame" x="209" y="455" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WBV-k6-tOh" userLabel="Switch">
+                                <rect key="frame" x="61" y="455" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapSwitch:" destination="o6I-Cc-WoE" eventType="touchUpInside" id="FcS-Kn-2JP"/>
+                                    <segue destination="hyE-Ng-Q8M" kind="modal" identifier="tapSwitchSegue" id="MHc-jJ-f9p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4da-Qc-rIV" userLabel="Done">
+                                <rect key="frame" x="209" y="455" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapDone:" destination="o6I-Cc-WoE" eventType="touchUpInside" id="mgV-z2-Pgp"/>
+                                    <segue destination="hyE-Ng-Q8M" kind="modal" identifier="tapDoneSegue" id="39s-Af-9ZN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gPJ-AP-Spd" userLabel="In Progress">
+                                <rect key="frame" x="127" y="447" width="66" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapInProgress:" destination="o6I-Cc-WoE" eventType="touchUpInside" id="XRa-9p-FW3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -466,4 +478,7 @@
         <image name="sun-center" width="114" height="120"/>
         <image name="sun-rays" width="114" height="120"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="39s-Af-9ZN"/>
+    </inferredMetricsTieBreakers>
 </document>
