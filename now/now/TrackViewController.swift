@@ -143,31 +143,66 @@ class TrackViewController: UIViewController {
     
     @IBAction func didTapSwitch(sender: UIButton) {
         // log event for current task
-        // Dismiss modal
-//        dismissViewControllerAnimated(true, completion: nil)
         
-        performSegueWithIdentifier("tapSwitchSegue", sender: nil)
+        // Stop timer
         timer.invalidate()
-        // Go back to home
-//        taskListViewController.backHome()
+        
+        print("did tap switch")
+        
+        // Return home
+        backHome()
+
     }
     
     @IBAction func didTapDone(sender: UIButton) {
           // how to set task to completed
 //        taskListViewController.currentTaskCompleted()
+        
+        // Return to task list
         performSegueWithIdentifier("tapDoneSegue", sender: nil)
+        
+        //Stop timer
         timer.invalidate()
         
-        // Need to remove current task from task list vc
+        // *Need to remove current task from task list vc
         
     }
     
     @IBAction func didTapInProgress(sender: UIButton) {
         //Reset timer to original task time
-                if globalTaskTime == 0 {
-                    globalTaskTime = tasks[trackTask].time
-                }
+//        if globalTaskTime == 0 {
+//            globalTaskTime = tasks[trackTask].time
+//        }
+        
+        count = globalTaskTime
+        
+        count = count - 1
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        var elapsedTime: NSTimeInterval = Double(count)
+        
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+        
+        //add the leading zero for minutes, seconds and millseconds and store them as string constants
+        
+        let strMinutes = String(format: "%02d", minutes)
+        let strSeconds = String(format: "%02d", seconds)
+        
+        taskTime.text = "\(strMinutes):\(strSeconds)"
+
+        
+        print(count)
+        
     }
+    
+
     
     
 }

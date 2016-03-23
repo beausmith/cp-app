@@ -327,7 +327,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="didTapSwitch:" destination="o6I-Cc-WoE" eventType="touchUpInside" id="FcS-Kn-2JP"/>
-                                    <segue destination="hyE-Ng-Q8M" kind="modal" identifier="tapSwitchSegue" id="MHc-jJ-f9p"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4da-Qc-rIV" userLabel="Done">
@@ -400,6 +399,12 @@
         <!--Update Task View Controller-->
         <scene sceneID="P3J-kX-Jrd">
             <objects>
+                <tapGestureRecognizer id="M2u-a4-8GK">
+                    <connections>
+                        <action selector="didTapInProgress:" destination="9hq-WB-klU" id="uzg-3L-7sQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="9hq-WB-klU" customClass="UpdateTaskViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jjC-I7-O7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -439,12 +444,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vdw-EW-nVE"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="M2u-a4-8GK">
-                    <connections>
-                        <action selector="didTapInProgress:" destination="9hq-WB-klU" id="uzg-3L-7sQ"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1927" y="2614"/>
         </scene>
