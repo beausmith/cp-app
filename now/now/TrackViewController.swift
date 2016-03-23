@@ -39,7 +39,7 @@ class TrackViewController: UIViewController {
 
         taskCategory.text = tasks[currentTask].categoryName
 
-        print(globalTaskTime)
+        //print(globalTaskTime)
 
 
         // Do any additional setup after loading the view.
@@ -52,13 +52,13 @@ class TrackViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
 
-            globalTaskTime = Int(tasks[currentTask].time)*60
+        globalTaskTime = Int(tasks[currentTask].time)*60
 
-            count = globalTaskTime
+        count = globalTaskTime
 
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
 
-            print(count)
+        //print(count)
 
     }
 
@@ -98,6 +98,33 @@ class TrackViewController: UIViewController {
         destinationViewController.trackTask = currentTask
         timer.invalidate()
         destinationViewController.trackViewController = self
+    }
+
+    func currentTaskCompleted() {
+        // log event for current task
+        tasks[currentTask].completed = true
+
+        // Convert new task to Binary format for NSUserDefaults
+        let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
+
+        // Add object to NS user defaults
+        NSUserDefaults.standardUserDefaults().setObject(data, forKey: "Tasks")
+
+        // Save NSUserDefaults
+        NSUserDefaults.standardUserDefaults().synchronize()
+
+        backHome()
+
+        // is there a next task?
+            // Start the next task
+            // trackViewController.startNextTask()
+            // Dismiss modal
+        // else
+            // Dismiss modal
+            // dismissViewControllerAnimated(true, completion: nil)
+            // Go back to home
+            // trackViewController.backHome()
+
     }
 
     func backHome() {

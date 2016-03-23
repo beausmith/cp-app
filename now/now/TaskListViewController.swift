@@ -14,9 +14,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
-    
+
     var emptyStateViewController: UIViewController!
-    
+    var activeTasks = [Task]()
+
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
@@ -31,12 +32,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Set table view row separator style
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-        
+
         // Import empty state VC into main view
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         emptyStateViewController = storyboard.instantiateViewControllerWithIdentifier("emptyStateViewController")
         clearView.addSubview(emptyStateViewController.view)
-        
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -46,33 +47,45 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             tasks = NSKeyedUnarchiver.unarchiveObjectWithData(data!) as! [Task]
         }
 
+        activeTasks = [Task]()
+
+        for task in tasks {
+            if task.completed == true {
+                print(task.taskName, "completed")
+            } else {
+                print(task.taskName, "active")
+                activeTasks.append(task)
+            }
+        }
+        print("---")
+
         // Reload table
         tableView.reloadData()
     }
-    
+
     override func viewDidAppear(animated: Bool) {
-        
+
         // Show empty state if there are no tasks
         checkIfEmptyState()
-        
+
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return activeTasks.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TaskCell")! as! TaskTableViewCell
 
         // Store data in cell
-        cell.taskLabel?.text = tasks[indexPath.row].taskName
-        cell.taskCategory?.text = tasks[indexPath.row].categoryName.uppercaseString
-        cell.taskTime?.text = "\(tasks[indexPath.row].time):00"
-        
+        cell.taskLabel?.text = activeTasks[indexPath.row].taskName
+        cell.taskCategory?.text = activeTasks[indexPath.row].categoryName.uppercaseString
+        cell.taskTime?.text = "\(activeTasks[indexPath.row].time):00"
+
         // Set cell border radius
         cell.cellBackgroundView?.layer.cornerRadius = 4
         cell.cellBackgroundView?.layer.masksToBounds = true
-        
+
         return cell
     }
 
@@ -84,7 +97,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             let indexPath = tableView.indexPathForCell(cell)
             //let task = tasks[indexPath!.row]
 
-            print(indexPath!.row)
+            print("current task:", tasks[indexPath!.row].taskName, " @ row: ", indexPath!.row)
             destinationViewController.currentTask = indexPath!.row
 
             let localNotification = UILocalNotification()
