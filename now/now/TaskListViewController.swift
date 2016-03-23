@@ -134,6 +134,32 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             checkIfEmptyState()
         }
     }
+    
+//    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+//        
+//        let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { value in
+//            // Remove item on table
+//            tasks.removeAtIndex(indexPath.row)
+//            let sections = NSIndexSet(index: 0)
+//            tableView.reloadSections(sections, withRowAnimation: .Automatic)
+//            
+//            // Remove item from database
+//            // Convert new task to Binary format for NSUserDefaults
+//            let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
+//            
+//            // Add object to NS user defaults
+//            NSUserDefaults.standardUserDefaults().setObject(data, forKey: "Tasks")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+//            
+//            // Reload table
+//            tableView.reloadData()
+//        }
+//        
+//        deleteAction.backgroundColor = UIColor(patternImage: UIImage(named: "Delete")!)
+//        deleteAction
+//        
+//        return [deleteAction]
+//    }
 
     // Check if there are no tasks in list
     func checkIfEmptyState() {
