@@ -52,11 +52,11 @@ class TrackViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
 
-            globalTaskTime = Int(tasks[currentTask].time)*60
+        globalTaskTime = Int(tasks[currentTask].time)*60
 
-            count = globalTaskTime
+        count = globalTaskTime
 
-            timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
 
         //print(count)
 
