@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MF3-nD-Ii2" id="hg0-lO-vxq">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="sag-qP-X9h">
@@ -214,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jZ-jf-WbG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1194" y="882"/>
+            <point key="canvasLocation" x="-1151" y="942"/>
         </scene>
         <!--Track View Controller-->
         <scene sceneID="dO3-F1-yG7">
@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qc-D3-jI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2874" y="1568"/>
+            <point key="canvasLocation" x="-1927" y="1840"/>
         </scene>
         <!--Reflect View Controller-->
         <scene sceneID="3g7-yi-JQf">
@@ -324,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bS6-kA-lWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1848" y="1950"/>
+            <point key="canvasLocation" x="-1301" y="1840"/>
         </scene>
         <!--Update Task View Controller-->
         <scene sceneID="P3J-kX-Jrd">
@@ -392,7 +392,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2518" y="770"/>
+            <point key="canvasLocation" x="-1927" y="2614"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="rpg-mj-5Tg">
@@ -410,7 +410,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5t-5F-ONr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2024" y="777"/>
+            <point key="canvasLocation" x="-2056" y="942"/>
         </scene>
     </scenes>
     <resources>
