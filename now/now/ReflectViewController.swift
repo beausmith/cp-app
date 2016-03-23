@@ -37,8 +37,14 @@ class ReflectViewController: UIViewController, ChartViewDelegate {
         }
 
         setChart(taskNames, values: taskTimes)
-
+        
+        if (self.isViewLoaded() && self.view.window != nil) {
+            print("helo")
+        } else {
+            print("Noe")
+        }
     }
+    
 
     func setChart(dataPoints: [String], values: [Double]) {
 

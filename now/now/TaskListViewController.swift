@@ -14,7 +14,10 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
+    @IBOutlet weak var reflectView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
 
+    var reflectViewController: UIViewController!
     var emptyStateViewController: UIViewController!
     var activeTasks = [Task]()
 
@@ -25,7 +28,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        scrollView.contentSize = CGSize(width: 640, height: 496)
+        
         // Make table view work
         tableView.delegate = self
         tableView.dataSource = self
@@ -37,6 +42,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         emptyStateViewController = storyboard.instantiateViewControllerWithIdentifier("emptyStateViewController")
         clearView.addSubview(emptyStateViewController.view)
+        
+        
+        // Import reflect view controller
+        reflectViewController = storyboard.instantiateViewControllerWithIdentifier("reflectViewController")
+        reflectView.addSubview(reflectViewController.view)
 
     }
 
