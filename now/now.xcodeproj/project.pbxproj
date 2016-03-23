@@ -24,6 +24,7 @@
 		D06E823B1CA2157D009E14D6 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E82391CA2157D009E14D6 /* BaseTransition.swift */; };
 		D06E823C1CA2157D009E14D6 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E823A1CA2157D009E14D6 /* FadeTransition.swift */; };
 		D06E823E1CA21590009E14D6 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E823D1CA21590009E14D6 /* Common.swift */; };
+		D06E82401CA21603009E14D6 /* SetClearedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E823F1CA21603009E14D6 /* SetClearedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D06E82391CA2157D009E14D6 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		D06E823A1CA2157D009E14D6 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		D06E823D1CA21590009E14D6 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		D06E823F1CA21603009E14D6 /* SetClearedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetClearedViewController.swift; sourceTree = "<group>"; };
 		D3D4703310A1B6E3CF2C2207 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +131,7 @@
 		CF0807201C8E867800DC2476 /* Set View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D06E823F1CA21603009E14D6 /* SetClearedViewController.swift */,
 				CFB48C8A1C9668F500665E67 /* Task.swift */,
 				CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */,
 				CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */,
@@ -274,6 +277,7 @@
 				D06E823B1CA2157D009E14D6 /* BaseTransition.swift in Sources */,
 				A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */,
 				CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */,
+				D06E82401CA21603009E14D6 /* SetClearedViewController.swift in Sources */,
 				D06E823E1CA21590009E14D6 /* Common.swift in Sources */,
 				A30F088B1C9F512200E4A0C3 /* Events.swift in Sources */,
 				CF08071F1C8E865F00DC2476 /* TaskTableViewCell.swift in Sources */,
