@@ -17,6 +17,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
     
+    var setClearedViewController: UIViewController!
+    
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
@@ -31,6 +33,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Set table view row separator style
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        setClearedViewController = storyboard.instantiateViewControllerWithIdentifier("SetClearedViewController")
+        
+        clearView.addSubview(setClearedViewController.view)
         
     }
 
@@ -122,10 +129,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Show empty state if array is empty
         if tasks.isEmpty  {
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.tableView.alpha = 0
-                self.clearView.alpha = 1
-            })
+            tableView.alpha = 0
+            clearView.alpha = 1
 
         } else {
             UIView.animateWithDuration(0.3, animations: { () -> Void in
