@@ -20,7 +20,7 @@ class ReflectViewController: UIViewController, ChartViewDelegate {
         pieChartView.noDataTextDescription = "GIVE REASON"
         pieChartView.descriptionText = ""
         pieChartView.drawHoleEnabled = true
-        pieChartView.centerText = "foobar"
+        pieChartView.centerText = "March 23"
         //pieChartView.usePercentValuesEnabled = true
         pieChartView.legend.enabled = false
 
@@ -29,8 +29,10 @@ class ReflectViewController: UIViewController, ChartViewDelegate {
 
         if tasks.count > 0 {
             for task in tasks {
-                taskNames.append(task.taskName)
-                taskTimes.append(Double(task.time))
+                if task.completed == true {
+                    taskNames.append(task.taskName)
+                    taskTimes.append(Double(task.time))
+                }
             }
         }
 
