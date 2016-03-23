@@ -59,9 +59,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidAppear(animated: Bool) {
         // Show empty state if there are no tasks
         checkIfEmptyState()
-        print("viewDidAppear")
+        
     }
-    
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -126,13 +125,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             
         } else if (segue.identifier == "addTaskSegue") {
-            let destinationViewController = segue.destinationViewController as! AddTaskViewController
-            
-            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
-            
-            destinationViewController.transitioningDelegate = fadeTransition
-            
-            fadeTransition.duration = 0.3
+//            let destinationViewController = segue.destinationViewController as! AddTaskViewController
+//            
+//            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+//            destinationViewController.transitioningDelegate = fadeTransition
+//            fadeTransition.duration = 0.3
         }
     }
     
