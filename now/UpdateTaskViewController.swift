@@ -42,17 +42,8 @@ class UpdateTaskViewController: UIViewController {
     }
 
     @IBAction func didTapCompleted(sender: AnyObject) {
-        // log event for current task
-        // is there a next task?
-            // Start the next task
-            // trackViewController.startNextTask()
-            // Dismiss modal
-            dismissViewControllerAnimated(true, completion: nil)
-        // else
-            // Dismiss modal
-            // dismissViewControllerAnimated(true, completion: nil)
-            // Go back to home
-            // trackViewController.backHome()
+        trackViewController.currentTaskCompleted()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*
