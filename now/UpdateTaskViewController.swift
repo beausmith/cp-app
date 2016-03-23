@@ -28,9 +28,9 @@ class UpdateTaskViewController: UIViewController {
     @IBAction func didTapInProgress(sender: UITapGestureRecognizer) {
         dismissViewControllerAnimated(true, completion: nil)
         // Reset timer to original task time
-        if globalTaskTime == 0 {
-            globalTaskTime = tasks[trackTask].time
-        }
+//        if globalTaskTime == 0 {
+//            globalTaskTime = tasks[trackTask].time
+//        }
     }
 
     @IBAction func didTapSwitch(sender: AnyObject) {
