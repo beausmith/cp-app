@@ -12,11 +12,26 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var taskCategorySegementedControl: UISegmentedControl!
     @IBOutlet weak var taskTimeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var addTaskParentView: UIView!
     
     var taskNumber : Int!
     
+    // Set Nav Bar to use the light theme
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set add task parent background radius
+        addTaskParentView.layer.cornerRadius = 4
+        addTaskParentView.layer.masksToBounds = true
+        
+        // Add shadow to parent background
+        addTaskParentView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).CGColor
+        addTaskParentView.layer.shadowOffset = CGSizeMake(3, 3)
+        addTaskParentView.layer.shadowRadius = 3
         
         // Add border to input field
         let border = CALayer()
