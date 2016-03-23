@@ -119,7 +119,7 @@
         <!--Add Task View Controller-->
         <scene sceneID="XlO-Ev-0Zv">
             <objects>
-                <viewController id="Kyw-tY-fn0" customClass="AddTaskViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddTaskViewController" id="Kyw-tY-fn0" customClass="AddTaskViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H5k-6B-dVh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

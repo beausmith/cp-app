@@ -18,6 +18,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var clearView: UIView!
     
     var setClearedViewController: UIViewController!
+    var fadeTransition: FadeTransition!
     
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -26,6 +27,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        // Initialize fade transition
+        fadeTransition =  FadeTransition()
 
         // Make table view work
         tableView.delegate = self
@@ -53,11 +57,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewDidAppear(animated: Bool) {
-        
         // Show empty state if there are no tasks
         checkIfEmptyState()
-        
+        print("viewDidAppear")
     }
+    
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
@@ -76,28 +80,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         cell.cellBackgroundView?.layer.masksToBounds = true
         
         return cell
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "startTaskSegue") {
-            let destinationViewController = segue.destinationViewController as! TrackViewController
-
-            let cell = sender as! UITableViewCell
-            let indexPath = tableView.indexPathForCell(cell)
-            //let task = tasks[indexPath!.row]
-
-            print(indexPath!.row)
-            destinationViewController.currentTask = indexPath!.row
-
-            let localNotification = UILocalNotification()
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-            localNotification.alertBody = "Are you done with task?"
-            localNotification.timeZone = NSTimeZone.defaultTimeZone()
-            localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
-
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-
-        }
     }
 
     // Show table editing options
@@ -123,23 +105,57 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             checkIfEmptyState()
         }
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "startTaskSegue") {
+            let destinationViewController = segue.destinationViewController as! TrackViewController
+            
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            //let task = tasks[indexPath!.row]
+            
+            print(indexPath!.row)
+            destinationViewController.currentTask = indexPath!.row
+            
+            let localNotification = UILocalNotification()
+            localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
+            localNotification.alertBody = "Are you done with task?"
+            localNotification.timeZone = NSTimeZone.defaultTimeZone()
+            localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+            
+            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+        } else if (segue.identifier == "addTaskSegue") {
+            let destinationViewController = segue.destinationViewController as! AddTaskViewController
+            
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            
+            destinationViewController.transitioningDelegate = fadeTransition
+            
+            fadeTransition.duration = 0.3
+        }
+    }
+    
     // Check if there are no tasks in list
     func checkIfEmptyState() {
-
+        
         // Show empty state if array is empty
         if tasks.isEmpty  {
             tableView.alpha = 0
             clearView.alpha = 1
-
+            
+            print("tasks is empty")
+            
         } else {
-            UIView.animateWithDuration(0.3, animations: { () -> Void in
-                self.tableView.alpha = 1
-                self.clearView.alpha = 0
-            })
+            tableView.alpha = 1
+            clearView.alpha = 0
+            
+            print("tasks is not empty")
         }
     }
-
-
+    
+    
+    // TODO:
+    // Figure out why view did appear is not firing with custom transitions
 
 }
