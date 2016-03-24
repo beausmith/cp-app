@@ -51,7 +51,7 @@ class TrackViewController: UIViewController {
 
     
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(TrackViewController.countdown), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         setNotification()
         // disable "in progress" button
         inProgressButton.enabled = false
