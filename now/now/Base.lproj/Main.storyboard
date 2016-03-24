@@ -8,7 +8,7 @@
         <!--Empty State View Controller-->
         <scene sceneID="8xN-gS-Xxz">
             <objects>
-                <viewController storyboardIdentifier="emptyStateViewController" id="mgz-1E-IKb" customClass="emptyStateViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmptyStateViewController" id="mgz-1E-IKb" customClass="EmptyStateViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gx9-iO-Qtc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,6 +39,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="emptyTextLabel" destination="LhS-R9-Gp2" id="XAY-6B-SvU"/>
+                        <outlet property="emptyTitleLabel" destination="GqF-ye-VYR" id="G5m-TG-yoJ"/>
                         <outlet property="sunCenterImageView" destination="dNE-Ve-EX8" id="28c-1k-XaN"/>
                         <outlet property="sunRaysImageView" destination="sPl-hG-r8u" id="Di1-aW-wcS"/>
                     </connections>
@@ -229,9 +231,9 @@
                                         <rect key="frame" x="16" y="174" width="256" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
+                                            <segment title="5"/>
+                                            <segment title="10"/>
                                             <segment title="15"/>
-                                            <segment title="30"/>
-                                            <segment title="60"/>
                                         </segments>
                                         <color key="tintColor" red="0.2196078431372549" green="0.51764705882352946" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>

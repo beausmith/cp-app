@@ -16,11 +16,11 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var clearView: UIView!
     @IBOutlet weak var taskListHeaderView: UIView!
 
-    var emptyStateViewController: UIViewController!
     var activeTasks = [Task]()
     var addTaskTransition: AddTaskTransition!
     var reflectTransition: FadeTransition!
-    
+    var emptyStateViewController: UIViewController!
+
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
@@ -28,7 +28,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Initialize fade transition
         addTaskTransition = AddTaskTransition()
         reflectTransition = FadeTransition()
@@ -42,8 +42,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Import empty state VC into main view
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        emptyStateViewController = storyboard.instantiateViewControllerWithIdentifier("emptyStateViewController")
+        emptyStateViewController = storyboard.instantiateViewControllerWithIdentifier("EmptyStateViewController")
         clearView.addSubview(emptyStateViewController.view)
+
 
     }
 
@@ -68,7 +69,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Reload table
         tableView.reloadData()
-        
+
         super.viewWillAppear(animated)
     }
 
@@ -76,7 +77,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Show empty state if there are no tasks
         checkIfEmptyState()
-        
+
         super.viewDidAppear(animated)
 
     }
@@ -110,14 +111,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
             print("current task:", tasks[indexPath!.row].taskName, " @ row: ", indexPath!.row)
             destinationViewController.currentTask = indexPath!.row
-
-            let localNotification = UILocalNotification()
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-            localNotification.alertBody = "Are you done with task?"
-            localNotification.timeZone = NSTimeZone.defaultTimeZone()
-            localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
-
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
 
         } else if (segue.identifier == "addTaskSegue") {
             let destinationViewController = segue.destinationViewController as! AddTaskViewController
@@ -157,12 +150,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             checkIfEmptyState()
         }
     }
-    
+
     // Check if there are no tasks in list
     func checkIfEmptyState() {
 
         // Show empty state if array is empty
-        if tasks.isEmpty  {
+        if activeTasks.isEmpty  {
             tableView.alpha = 0
             clearView.alpha = 1
         } else {

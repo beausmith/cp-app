@@ -51,15 +51,26 @@ class TrackViewController: UIViewController {
 
     
     func startTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(TrackViewController.countdown), userInfo: nil, repeats: true)
+        setNotification()
         // disable "in progress" button
         inProgressButton.enabled = false
         inProgressButton.alpha = 0.4
     }
 
-    func update() {
-        if(currentTaskSeconds > 0) {
-            currentTaskSeconds = currentTaskSeconds - 1
+    func setNotification() {
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = NSDate(timeIntervalSinceNow: Double(currentTaskSeconds/60))
+        localNotification.alertBody = "Are you done with \(tasks[currentTask].taskName)?"
+        localNotification.timeZone = NSTimeZone.defaultTimeZone()
+        localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+
+    func countdown() {
+        if (currentTaskSeconds > 0) {
+
+            currentTaskSeconds -= 1
 
             var elapsedTime: NSTimeInterval = Double(currentTaskSeconds)
 

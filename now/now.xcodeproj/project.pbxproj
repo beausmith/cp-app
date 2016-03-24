@@ -15,7 +15,6 @@
 		8B7EE0371CA0EB6A0050B190 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7EE0361CA0EB6A0050B190 /* GlobalVariables.swift */; };
 		8BEC11071C9E084500E2E659 /* ReflectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEC11061C9E084500E2E659 /* ReflectViewController.swift */; };
 		A30F088B1C9F512200E4A0C3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F088A1C9F512200E4A0C3 /* Event.swift */; };
-		A30F6D1A1C90F58F00AA43B2 /* UpdateTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */; };
 		A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */; };
 		C6098D2789E806D0D0DC5D4A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3D4703310A1B6E3CF2C2207 /* Pods.framework */; };
 		CF08071B1C8E7DE700DC2476 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */; };
@@ -25,7 +24,7 @@
 		D00017751CA2502B006D8C35 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017721CA2502B006D8C35 /* BaseTransition.swift */; };
 		D00017761CA2502B006D8C35 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017731CA2502B006D8C35 /* Common.swift */; };
 		D00017771CA2502B006D8C35 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017741CA2502B006D8C35 /* FadeTransition.swift */; };
-		D00017791CA250FF006D8C35 /* emptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017781CA250FF006D8C35 /* emptyStateViewController.swift */; };
+		D00017791CA250FF006D8C35 /* EmptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017781CA250FF006D8C35 /* EmptyStateViewController.swift */; };
 		D08B5EA31CA359FF00B14FF6 /* AddTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5EA21CA359FF00B14FF6 /* AddTaskTransition.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,6 @@
 		8B7EE0361CA0EB6A0050B190 /* GlobalVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		8BEC11061C9E084500E2E659 /* ReflectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReflectViewController.swift; sourceTree = "<group>"; };
 		A30F088A1C9F512200E4A0C3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateTaskViewController.swift; path = ../UpdateTaskViewController.swift; sourceTree = "<group>"; };
 		A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackViewController.swift; sourceTree = "<group>"; };
 		CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +50,7 @@
 		D00017721CA2502B006D8C35 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		D00017731CA2502B006D8C35 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		D00017741CA2502B006D8C35 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
-		D00017781CA250FF006D8C35 /* emptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emptyStateViewController.swift; sourceTree = "<group>"; };
+		D00017781CA250FF006D8C35 /* EmptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyStateViewController.swift; sourceTree = "<group>"; };
 		D08B5EA21CA359FF00B14FF6 /* AddTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTransition.swift; sourceTree = "<group>"; };
 		D3D4703310A1B6E3CF2C2207 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,7 +133,6 @@
 		A30F6D181C90F3BC00AA43B2 /* Track */ = {
 			isa = PBXGroup;
 			children = (
-				A30F6D191C90F58F00AA43B2 /* UpdateTaskViewController.swift */,
 				A30F6D1B1C90F5CE00AA43B2 /* TrackViewController.swift */,
 				A30F088A1C9F512200E4A0C3 /* Event.swift */,
 			);
@@ -149,7 +146,7 @@
 				CF08071E1C8E865F00DC2476 /* TaskTableViewCell.swift */,
 				CF08071A1C8E7DE700DC2476 /* AddTaskViewController.swift */,
 				CF08071C1C8E82D700DC2476 /* TaskListViewController.swift */,
-				D00017781CA250FF006D8C35 /* emptyStateViewController.swift */,
+				D00017781CA250FF006D8C35 /* EmptyStateViewController.swift */,
 			);
 			name = Set;
 			sourceTree = "<group>";
@@ -287,7 +284,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A30F6D1A1C90F58F00AA43B2 /* UpdateTaskViewController.swift in Sources */,
 				D08B5EA31CA359FF00B14FF6 /* AddTaskTransition.swift in Sources */,
 				A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */,
 				CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */,
@@ -295,7 +291,7 @@
 				D00017761CA2502B006D8C35 /* Common.swift in Sources */,
 				CF08071F1C8E865F00DC2476 /* TaskTableViewCell.swift in Sources */,
 				8B7EE0371CA0EB6A0050B190 /* GlobalVariables.swift in Sources */,
-				D00017791CA250FF006D8C35 /* emptyStateViewController.swift in Sources */,
+				D00017791CA250FF006D8C35 /* EmptyStateViewController.swift in Sources */,
 				CF08071B1C8E7DE700DC2476 /* AddTaskViewController.swift in Sources */,
 				CFB48C8B1C9668F500665E67 /* Task.swift in Sources */,
 				D00017751CA2502B006D8C35 /* BaseTransition.swift in Sources */,
