@@ -26,6 +26,7 @@
 		D00017761CA2502B006D8C35 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017731CA2502B006D8C35 /* Common.swift */; };
 		D00017771CA2502B006D8C35 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017741CA2502B006D8C35 /* FadeTransition.swift */; };
 		D00017791CA250FF006D8C35 /* emptyStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00017781CA250FF006D8C35 /* emptyStateViewController.swift */; };
+		D08B5EA31CA359FF00B14FF6 /* AddTaskTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08B5EA21CA359FF00B14FF6 /* AddTaskTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D00017731CA2502B006D8C35 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		D00017741CA2502B006D8C35 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
 		D00017781CA250FF006D8C35 /* emptyStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emptyStateViewController.swift; sourceTree = "<group>"; };
+		D08B5EA21CA359FF00B14FF6 /* AddTaskTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTaskTransition.swift; sourceTree = "<group>"; };
 		D3D4703310A1B6E3CF2C2207 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				D00017721CA2502B006D8C35 /* BaseTransition.swift */,
 				D00017731CA2502B006D8C35 /* Common.swift */,
 				D00017741CA2502B006D8C35 /* FadeTransition.swift */,
+				D08B5EA21CA359FF00B14FF6 /* AddTaskTransition.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30F6D1A1C90F58F00AA43B2 /* UpdateTaskViewController.swift in Sources */,
+				D08B5EA31CA359FF00B14FF6 /* AddTaskTransition.swift in Sources */,
 				A30F6D1C1C90F5CE00AA43B2 /* TrackViewController.swift in Sources */,
 				CF08071D1C8E82D700DC2476 /* TaskListViewController.swift in Sources */,
 				A30F088B1C9F512200E4A0C3 /* Event.swift in Sources */,

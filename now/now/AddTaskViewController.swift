@@ -69,6 +69,8 @@ class AddTaskViewController: UIViewController {
         
         // Save NSUserDefaults
         NSUserDefaults.standardUserDefaults().synchronize()
+        
+        
     }
     
 }

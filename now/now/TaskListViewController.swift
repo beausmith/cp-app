@@ -14,10 +14,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var clearView: UIView!
+    @IBOutlet weak var taskListHeaderView: UIView!
 
     var emptyStateViewController: UIViewController!
     var activeTasks = [Task]()
-
+    var addTaskTransition: AddTaskTransition!
+    
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
@@ -25,6 +27,9 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize fade transition
+        addTaskTransition =  AddTaskTransition()
 
         // Make table view work
         tableView.delegate = self
@@ -61,12 +66,16 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Reload table
         tableView.reloadData()
+        
+        super.viewWillAppear(animated)
     }
 
     override func viewDidAppear(animated: Bool) {
 
         // Show empty state if there are no tasks
         checkIfEmptyState()
+        
+        super.viewDidAppear(animated)
 
     }
 
@@ -108,6 +117,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
 
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
 
+        } else if (segue.identifier == "addTaskSegue") {
+            let destinationViewController = segue.destinationViewController as! AddTaskViewController
+
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = addTaskTransition
+            addTaskTransition.duration = 0.3
         }
     }
 
@@ -135,32 +150,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-//    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-//        
-//        let deleteAction = UITableViewRowAction(style: .Destructive, title: "Delete") { value in
-//            // Remove item on table
-//            tasks.removeAtIndex(indexPath.row)
-//            let sections = NSIndexSet(index: 0)
-//            tableView.reloadSections(sections, withRowAnimation: .Automatic)
-//            
-//            // Remove item from database
-//            // Convert new task to Binary format for NSUserDefaults
-//            let data = NSKeyedArchiver.archivedDataWithRootObject(tasks)
-//            
-//            // Add object to NS user defaults
-//            NSUserDefaults.standardUserDefaults().setObject(data, forKey: "Tasks")
-//            NSUserDefaults.standardUserDefaults().synchronize()
-//            
-//            // Reload table
-//            tableView.reloadData()
-//        }
-//        
-//        deleteAction.backgroundColor = UIColor(patternImage: UIImage(named: "Delete")!)
-//        deleteAction
-//        
-//        return [deleteAction]
-//    }
-
     // Check if there are no tasks in list
     func checkIfEmptyState() {
 
