@@ -111,14 +111,6 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             print("current task:", tasks[indexPath!.row].taskName, " @ row: ", indexPath!.row)
             destinationViewController.currentTask = indexPath!.row
 
-            let localNotification = UILocalNotification()
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
-            localNotification.alertBody = "Are you done with task?"
-            localNotification.timeZone = NSTimeZone.defaultTimeZone()
-            localNotification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
-
-            UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-
         } else if (segue.identifier == "addTaskSegue") {
             let destinationViewController = segue.destinationViewController as! AddTaskViewController
 
