@@ -154,7 +154,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     func checkIfEmptyState() {
 
         // Show empty state if array is empty
-        if tasks.isEmpty  {
+        if activeTasks.isEmpty  {
             tableView.alpha = 0
             clearView.alpha = 1
         } else {
