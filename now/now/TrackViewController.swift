@@ -155,8 +155,8 @@ class TrackViewController: UIViewController {
     }
     
     @IBAction func didTapDone(sender: UIButton) {
-          // how to set task to completed
-//        taskListViewController.currentTaskCompleted()
+       // how to set task to completed
+        currentTaskCompleted()
         
         // Return to task list
         performSegueWithIdentifier("tapDoneSegue", sender: nil)
