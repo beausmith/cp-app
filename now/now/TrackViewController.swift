@@ -8,21 +8,22 @@
 
 import UIKit
 
-var globalTaskTime = 0
-
 class TrackViewController: UIViewController {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskTime: UILabel!
     @IBOutlet weak var taskCategory: UILabel!
 
+    @IBOutlet weak var inProgressButton: UIButton!
     var taskNumber: Int!
 
     var currentTask: Int!
 
-    var count: Int!
+    var currentTaskSeconds: Int = 0
 
     var timer: NSTimer!
+    
+    var trackTask: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,36 +40,28 @@ class TrackViewController: UIViewController {
 
         taskCategory.text = tasks[currentTask].categoryName
 
-        //print(globalTaskTime)
+        currentTaskSeconds = Int(tasks[currentTask].time)*60
 
-
-        // Do any additional setup after loading the view.
+        startTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
-
-        globalTaskTime = Int(tasks[currentTask].time)*60
-
-        count = globalTaskTime
-
+    
+    func startTimer() {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-
-        //print(count)
-
+        // disable "in progress" button
+        inProgressButton.enabled = false
+        inProgressButton.alpha = 0.4
     }
-
 
     func update() {
-        if(count > 0)
-        {
-            count = count - 1
+        if(currentTaskSeconds > 0) {
+            currentTaskSeconds = currentTaskSeconds - 1
 
-            var elapsedTime: NSTimeInterval = Double(count)
+            var elapsedTime: NSTimeInterval = Double(currentTaskSeconds)
 
             //calculate the minutes in elapsed time.
             let minutes = UInt8(elapsedTime / 60.0)
@@ -85,19 +78,12 @@ class TrackViewController: UIViewController {
 
             taskTime.text = "\(strMinutes):\(strSeconds)"
 
-        } else if (count == 0) {
-
-            performSegueWithIdentifier("timerDoneSegue", sender: nil)
-
+        } else if (currentTaskSeconds == 0) {
             timer.invalidate()
+            // enable "in progress" button
+            inProgressButton.enabled = true
+            inProgressButton.alpha = 1
         }
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController as! UpdateTaskViewController
-        destinationViewController.trackTask = currentTask
-        timer.invalidate()
-        destinationViewController.trackViewController = self
     }
 
     func currentTaskCompleted() {
@@ -135,4 +121,41 @@ class TrackViewController: UIViewController {
         // record Event
         backHome()
     }
+    
+    @IBAction func didTapSwitch(sender: UIButton) {
+        // log event for current task
+        
+        // Stop timer
+        timer.invalidate()
+        
+        print("did tap switch")
+        
+        // Return home
+        backHome()
+
+    }
+    
+    @IBAction func didTapDone(sender: UIButton) {
+       // how to set task to completed
+        currentTaskCompleted()
+        
+        // Return home
+        backHome()
+        
+        //Stop timer
+        timer.invalidate()
+        
+    }
+    
+    @IBAction func didTapInProgress(sender: UIButton) {
+        
+        currentTaskSeconds = Int(tasks[currentTask].time)*60
+        
+        startTimer()
+        
+    }
+    
+
+    
+    
 }
