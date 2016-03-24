@@ -178,6 +178,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="addTaskBg" id="Vwb-x7-V9k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eY9-pd-QMc">
                                 <rect key="frame" x="16" y="32" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -477,6 +481,7 @@
         <image name="LaunchScreen" width="320" height="568"/>
         <image name="Switch" width="50" height="50"/>
         <image name="Timer" width="319" height="319"/>
+        <image name="addTaskBg" width="320" height="568"/>
         <image name="close" width="22" height="22"/>
         <image name="settings icon" width="16" height="16"/>
         <image name="sun-center" width="114" height="120"/>
