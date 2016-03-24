@@ -8,23 +8,20 @@
 
 import UIKit
 
-var globalTaskTime = 0
-
 class TrackViewController: UIViewController {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskTime: UILabel!
     @IBOutlet weak var taskCategory: UILabel!
 
+    @IBOutlet weak var inProgressButton: UIButton!
     var taskNumber: Int!
 
     var currentTask: Int!
 
-    var count: Int!
+    var currentTaskSeconds: Int = 0
 
     var timer: NSTimer!
-    
-    var taskListViewController: TaskListViewController!
     
     var trackTask: Int!
 
@@ -43,36 +40,28 @@ class TrackViewController: UIViewController {
 
         taskCategory.text = tasks[currentTask].categoryName
 
-        //print(globalTaskTime)
+        currentTaskSeconds = Int(tasks[currentTask].time)*60
 
-
-        // Do any additional setup after loading the view.
+        startTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
-
-        globalTaskTime = Int(tasks[currentTask].time)*60
-
-        count = globalTaskTime
-
+    
+    func startTimer() {
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-
-        //print(count)
-
+        // disable "in progress" button
+        inProgressButton.enabled = false
+        inProgressButton.alpha = 0.4
     }
-
 
     func update() {
-        if(count > 0)
-        {
-            count = count - 1
+        if(currentTaskSeconds > 0) {
+            currentTaskSeconds = currentTaskSeconds - 1
 
-            var elapsedTime: NSTimeInterval = Double(count)
+            var elapsedTime: NSTimeInterval = Double(currentTaskSeconds)
 
             //calculate the minutes in elapsed time.
             let minutes = UInt8(elapsedTime / 60.0)
@@ -89,21 +78,13 @@ class TrackViewController: UIViewController {
 
             taskTime.text = "\(strMinutes):\(strSeconds)"
 
-        } else if (count == 0) {
-
-//            performSegueWithIdentifier("timerDoneSegue", sender: nil)
-
+        } else if (currentTaskSeconds == 0) {
             timer.invalidate()
+            // enable "in progress" button
+            inProgressButton.enabled = true
+            inProgressButton.alpha = 1
         }
     }
-
-    // Commented this out since we don't segue to UpdateTask vc anymore.
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        let destinationViewController = segue.destinationViewController as! UpdateTaskViewController
-//        destinationViewController.trackTask = currentTask
-//        timer.invalidate()
-//        destinationViewController.trackViewController = self
-//    }
 
     func currentTaskCompleted() {
         // log event for current task
@@ -158,47 +139,19 @@ class TrackViewController: UIViewController {
        // how to set task to completed
         currentTaskCompleted()
         
-        // Return to task list
-        performSegueWithIdentifier("tapDoneSegue", sender: nil)
+        // Return home
+        backHome()
         
         //Stop timer
         timer.invalidate()
         
-        // *Need to remove current task from task list vc
-        
     }
     
     @IBAction func didTapInProgress(sender: UIButton) {
-        //Reset timer to original task time
-//        if globalTaskTime == 0 {
-//            globalTaskTime = tasks[trackTask].time
-//        }
         
-        count = globalTaskTime
+        currentTaskSeconds = Int(tasks[currentTask].time)*60
         
-        count = count - 1
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
-        
-        var elapsedTime: NSTimeInterval = Double(count)
-        
-        //calculate the minutes in elapsed time.
-        let minutes = UInt8(elapsedTime / 60.0)
-        elapsedTime -= (NSTimeInterval(minutes) * 60)
-        
-        //calculate the seconds in elapsed time.
-        let seconds = UInt8(elapsedTime)
-        elapsedTime -= NSTimeInterval(seconds)
-        
-        //add the leading zero for minutes, seconds and millseconds and store them as string constants
-        
-        let strMinutes = String(format: "%02d", minutes)
-        let strSeconds = String(format: "%02d", seconds)
-        
-        taskTime.text = "\(strMinutes):\(strSeconds)"
-
-        
-        print(count)
+        startTimer()
         
     }
     

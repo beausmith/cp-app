@@ -314,10 +314,6 @@
                                 <rect key="frame" x="61" y="455" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Continue - play" id="mpp-et-LLy">
-                                <rect key="frame" x="127" y="447" width="66" height="66"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Done" id="IEA-K2-Aur">
                                 <rect key="frame" x="209" y="455" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -337,9 +333,11 @@
                                     <segue destination="hyE-Ng-Q8M" kind="modal" identifier="tapDoneSegue" id="39s-Af-9ZN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gPJ-AP-Spd" userLabel="In Progress">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gPJ-AP-Spd" userLabel="In Progress">
                                 <rect key="frame" x="127" y="447" width="66" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Continue - play"/>
+                                <state key="disabled" image="Continue - play"/>
                                 <connections>
                                     <action selector="didTapInProgress:" destination="o6I-Cc-WoE" eventType="touchUpInside" id="XRa-9p-FW3"/>
                                 </connections>
@@ -349,6 +347,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="2kK-2f-BVR"/>
                     <connections>
+                        <outlet property="inProgressButton" destination="gPJ-AP-Spd" id="noX-jW-kmI"/>
                         <outlet property="taskCategory" destination="agY-tw-pb3" id="1Qx-c0-VRq"/>
                         <outlet property="taskName" destination="UIf-Ng-rAI" id="ugb-8c-foQ"/>
                         <outlet property="taskTime" destination="VqM-n6-dNc" id="61k-iE-WUR"/>
@@ -399,12 +398,6 @@
         <!--Update Task View Controller-->
         <scene sceneID="P3J-kX-Jrd">
             <objects>
-                <tapGestureRecognizer id="M2u-a4-8GK">
-                    <connections>
-                        <action selector="didTapInProgress:" destination="9hq-WB-klU" id="uzg-3L-7sQ"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="9hq-WB-klU" customClass="UpdateTaskViewController" customModule="now" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jjC-I7-O7h">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -444,6 +437,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vdw-EW-nVE"/>
                 </viewController>
+                <tapGestureRecognizer id="M2u-a4-8GK">
+                    <connections>
+                        <action selector="didTapInProgress:" destination="9hq-WB-klU" id="uzg-3L-7sQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tW5-pd-Hua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1927" y="2614"/>
         </scene>
