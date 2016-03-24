@@ -19,6 +19,7 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
     var emptyStateViewController: UIViewController!
     var activeTasks = [Task]()
     var addTaskTransition: AddTaskTransition!
+    var reflectTransition: FadeTransition!
     
     // Set Nav Bar to use the light theme
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -29,7 +30,8 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         
         // Initialize fade transition
-        addTaskTransition =  AddTaskTransition()
+        addTaskTransition = AddTaskTransition()
+        reflectTransition = FadeTransition()
 
         // Make table view work
         tableView.delegate = self
@@ -123,6 +125,12 @@ class TaskListViewController: UIViewController, UITableViewDelegate, UITableView
             destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
             destinationViewController.transitioningDelegate = addTaskTransition
             addTaskTransition.duration = 0.3
+        } else if (segue.identifier == "reflectSegue") {
+            let destinationViewController = segue.destinationViewController as! ReflectViewController
+
+            destinationViewController.modalPresentationStyle = UIModalPresentationStyle.Custom
+            destinationViewController.transitioningDelegate = reflectTransition
+            reflectTransition.duration = 0.3
         }
     }
 
